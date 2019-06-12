@@ -1,0 +1,20 @@
+{:source-paths ["src" "test"]
+
+; Put your libs here, or create a project with lein.
+; I personally use lein mostly because I already have
+; a "profiles" dependencies ready
+:dependencies []
+
+:builds
+{:dev {:target :node-library
+  :exports {:config git-puns.core/config
+    :activate git-puns.core/activate
+    :deactivate git-puns.core/deactivate
+
+    ; :status-bar-consumer
+    ; clojure-plus.providers-consumers.status-bar/activate
+            }
+
+    :output-dir "lib/js"
+    :output-to "lib/main.js"
+    :devtools {:before-load-async git-puns.core/before}}}}

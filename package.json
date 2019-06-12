@@ -1,6 +1,6 @@
 {
   "name": "git-puns",
-  "main": "./lib/git-puns",
+  "main": "./lib/main",
   "version": "0.0.0",
   "description": "A short description of your package",
   "keywords": [
@@ -14,5 +14,8 @@
     "atom": ">=1.0.0 <2.0.0"
   },
   "dependencies": {
+  },
+  "devDependencies": {
+    "shadow-cljs": "^2.3.23"
   }
 }
