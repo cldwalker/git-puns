@@ -1,0 +1,26 @@
+{
+  "context-menu": {
+    "atom-text-editor": [
+      {
+        "label": "Toggle git-puns",
+        "command": "git-puns:toggle"
+      }
+    ]
+  },
+  "menu": [
+    {
+      "label": "Packages",
+      "submenu": [
+        {
+          "label": "git-puns",
+          "submenu": [
+            {
+              "label": "Toggle",
+              "command": "git-puns:toggle"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
