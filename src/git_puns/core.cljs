@@ -7,14 +7,19 @@
   (prn :PUNS :TOGGLED!))
 
 (defn activate []
-  (aux/create-subscriptions)
+  (aux/reset-subscriptions)
   (aux/command-for "toggle" toggle))
 
 (defn deactivate []
   (.dispose @aux/subscriptions))
 
 (defn before [done]
-  (deactivate)
-  (done)
-  (activate)
-  (println "Reloaded"))
+  (let [main (.. js/atom -packages (getActivePackage "git-puns") -mainModule)]
+    (.deactivate main)
+    (done)))
+
+(defn after []
+  (let [main (.. js/atom -packages (getActivePackage "git-puns") -mainModule)]
+    (.activate main)
+    (.. js/atom -notifications (addSuccess "Reloaded Git Puns"))
+    (println "Reloaded")))

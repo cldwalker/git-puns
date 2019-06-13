@@ -12,4 +12,5 @@
 
     :output-dir "lib/js"
     :output-to "lib/main.js"
-    :devtools {:before-load-async git-puns.core/before}}}}
+    :devtools {:before-load-async git-puns.core/before
+               :after-load git-puns.core/after}}}}
