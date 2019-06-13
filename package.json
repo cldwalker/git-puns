@@ -3,19 +3,20 @@
   "main": "./lib/main",
   "version": "0.0.0",
   "description": "A short description of your package",
-  "keywords": [
-  ],
+  "keywords": [],
   "activationCommands": {
-    "atom-workspace": "git-puns:toggle"
+    "atom-workspace": [
+      "git-puns:toggle"
+    ]
   },
   "repository": "https://github.com/atom/git-puns",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "shadow-cljs": "^2.3.23"
+    "shadow-cljs": "^2.8.37",
+    "ws": "^6.2.1"
   }
 }
