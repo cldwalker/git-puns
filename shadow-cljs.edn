@@ -7,13 +7,8 @@
 
 :builds
 {:dev {:target :node-library
-       :exports {:config git-puns.core/config
-                 :activate git-puns.core/activate
-                 :deactivate git-puns.core/deactivate
-
-                 ; :status-bar-consumer
-                 ; clojure-plus.providers-consumers.status-bar/activate
-                 }
+       :exports {:activate git-puns.core/activate
+                 :deactivate git-puns.core/deactivate}
 
     :output-dir "lib/js"
     :output-to "lib/main.js"

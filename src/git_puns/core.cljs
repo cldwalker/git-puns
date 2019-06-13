@@ -4,7 +4,7 @@
 (def config {})
 
 (defn- toggle []
-  (prn :TOGGLED!))
+  (prn :PUNS :TOGGLED!))
 
 (defn activate []
   (aux/create-subscriptions)

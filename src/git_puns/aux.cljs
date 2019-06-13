@@ -2,7 +2,7 @@
 
 (def ^:private atom-ed (js/require "atom"))
 (def ^:private CompositeDisposable (.-CompositeDisposable atom-ed))
-(def subscriptions nil)
+(def subscriptions (atom (CompositeDisposable.)))
 
 (defn create-subscriptions []
   (reset! subscriptions (atom (CompositeDisposable.))))
