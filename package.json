@@ -6,7 +6,9 @@
   "keywords": [],
   "activationCommands": {
     "atom-workspace": [
-      "git-puns:joke"
+      "git-puns:joke",
+      "git-puns:github-push-with-joke",
+      "git-puns:github-pull-with-joke"
     ]
   },
   "repository": "https://github.com/atom/git-puns",
