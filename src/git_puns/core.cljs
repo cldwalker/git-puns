@@ -1,27 +1,11 @@
 (ns git-puns.core
-  (:require [git-puns.aux :as aux]
-            [clojure.string :as string]))
-
-;; Commands
-;; ========
-(def fs (js/require "fs"))
-(def jokes-file (str js/__dirname "/../resources/jokes.txt"))
-(def jokes-string (str (.readFileSync fs jokes-file)))
-
-(defn- fetch-joke []
-  (rand-nth (string/split-lines jokes-string)))
-
-(defn- joke-command []
-  (.. js/atom -notifications (addInfo (fetch-joke) #js{:dismissable true})))
+  (:require [git-puns.package :as package]
+            [git-puns.commands :as commands]))
 
 ;; Package hooks
 ;; =============
-(defn activate []
-  (aux/reset-subscriptions)
-  (aux/command-for "joke" joke-command))
-
-(defn deactivate []
-  (.dispose @aux/subscriptions))
+(def activate (partial package/activate commands/commands))
+(def deactivate package/deactivate)
 
 ;; Repl hooks
 ;; ==========

@@ -1,10 +1,10 @@
-(ns git-puns.aux)
+(ns git-puns.package)
 
 (def ^:private atom-ed (js/require "atom"))
 (def ^:private CompositeDisposable (.-CompositeDisposable atom-ed))
 (def subscriptions (atom (CompositeDisposable.)))
 
-(defn reset-subscriptions []
+(defn- reset-subscriptions []
   (reset! subscriptions (CompositeDisposable.)))
 
 (defn command-for [name f]
@@ -12,3 +12,14 @@
                                           (str "git-puns:" name)
                                           f))]
     (.add @subscriptions cmd)))
+
+(defn activate
+  "Activates packages by creating commands and defining a Disposable for event subscriptions. Given commands is a map of names to fns"
+  [commands]
+  (reset-subscriptions)
+  (doseq [[cmd cmd-fn] commands]
+    (command-for (name cmd) cmd-fn)))
+
+(defn deactivate
+  []
+  (.dispose @subscriptions))
