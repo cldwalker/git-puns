@@ -9,8 +9,7 @@
 {:dev {:target :node-library
        :exports {:activate git-puns.core/activate
                  :deactivate git-puns.core/deactivate}
-
-    :output-dir "lib/js"
-    :output-to "lib/main.js"
-    :devtools {:before-load-async git-puns.core/before
-               :after-load git-puns.core/after}}}}
+       :output-dir "lib/js"
+       :output-to "lib/main.js"
+       :devtools {:before-load-async git-puns.core/before
+                  :after-load git-puns.core/after}}}}

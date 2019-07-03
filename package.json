@@ -1,8 +1,8 @@
 {
   "name": "git-puns",
   "main": "./lib/main",
-  "version": "0.0.0",
-  "description": "A short description of your package",
+  "version": "1.0.0",
+  "description": "Git some laughs for your git workflow",
   "keywords": [],
   "activationCommands": {
     "atom-workspace": [
@@ -11,7 +11,7 @@
       "git-puns:github-pull-with-joke"
     ]
   },
-  "repository": "https://github.com/atom/git-puns",
+  "repository": "https://github.com/cldwalker/git-puns",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
