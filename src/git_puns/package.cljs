@@ -1,5 +1,6 @@
 (ns git-puns.package)
 
+;; Subscriptions are currently unused but may be used if more features are added
 (def ^:private atom-ed (js/require "atom"))
 (def ^:private CompositeDisposable (.-CompositeDisposable atom-ed))
 (def subscriptions (atom (CompositeDisposable.)))
