@@ -4,3 +4,5 @@ node_modules
 /.nrepl-port
 /.shadow-cljs
 /lib
+/cljs-test-runner-out
+.cpcache

@@ -9,7 +9,7 @@ This package is not distributed as an Atom package yet. For now, install with:
 $ git clone https://github.com/cldwalker/git-puns ~/.atom/packages/
 $ cd ~/.atom/packages/git-puns/
 $ yarn install
-$ yarn exec shadow-cljs compile dev
+$ yarn shadow-cljs compile dev
 ```
 Note: You will need Java installed for shadow-cljs to compile ClojureScript - https://github.com/thheller/shadow-cljs#requirements
 
@@ -42,7 +42,7 @@ The following list describes what is required to setup ClojureScript/cljs to int
 * Commands are configured under the `activationCommands` key in package.json. These commands are defined as a cljs map in `git-puns.commands/commands`.
 * The shadow-cljs repl reload is configured under the `:devtools` key. The functions referenced there activate/deactivate and notify the user when the package reloads.
 
-### REPL Setup
+### REPL Features
 
 Since this package is written in ClojureScript, it provides a powerful repl environment. When a developer saves a ClojureScript file:
 * The ClojureScript files are rebuilt, all relevant Atom and cljs state is reset and all file changes are available in the repl.
@@ -50,12 +50,13 @@ Since this package is written in ClojureScript, it provides a powerful repl envi
   * To see if a failure occurs during reload, you will need to check the JS console after running the `Window: Toggle Dev Tools` command.
 * When the changes are done reloading, a developer gets an explicit reloaded message in Atom.
 
+### REPL Setup
 ```sh
 # Kick off a watcher to compile clojurescript to js
-$ yarn exec shadow-cljs watch dev
+$ yarn shadow-cljs watch dev
 
 # In another terminal, start your repl
-$ yarn exec shadow-cljs cljs-repl dev
+$ yarn shadow-cljs cljs-repl dev
 [1:1]~cljs.user=>
 
 # In Atom, activate the package by kicking off one of its commands e.g. choose "Git Puns: Joke"
@@ -108,6 +109,16 @@ nil
 Huzzah!
 
 For more on repl driven development, see [Stuart Halloway's excellent presentation](https://github.com/stuarthalloway/presentations/wiki/REPL-Driven-Development).
+
+### Testing
+
+Testing is configured through `deps.edn`. To run tests, be sure to have the [clojure binary installed](https://clojure.org/guides/getting_started).
+
+To run tests: `clj -Atest`
+
+To have tests run as changes are made to src/ or test/: `clj -Atest -w src`
+
+For more options on running tests, run `clj -Atest --help` and consult the [test runner documentation](https://github.com/Olical/cljs-test-runner).
 
 ## License
 See LICENSE.md

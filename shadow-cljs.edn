@@ -1,9 +1,6 @@
 {:source-paths ["src" "test"]
-
-; Put your libs here, or create a project with lein.
-; I personally use lein mostly because I already have
-; a "profiles" dependencies ready
-:dependencies []
+;; Use deps.edn instead
+;; :dependencies []
 
 :builds
 {:dev {:target :node-library
