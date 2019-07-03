@@ -1,14 +1,13 @@
 (ns git-puns.commands
-  (:require [clojure.string :as string]))
+  (:require [clojure.string :as string])
+  (:require-macros [git-puns.macros :as m]))
 
 ;; Joke command
 ;; ============
-(def fs (js/require "fs"))
 ;; From https://github.com/EugeneKay/git-jokes/
-(def jokes-file (str js/__dirname "/../resources/jokes.txt"))
-(def jokes-string (str (.readFileSync fs jokes-file)))
+(def jokes-string (m/inline-file "resources/jokes.txt"))
 
-(defn- fetch-joke []
+(defn fetch-joke []
   (rand-nth (string/split-lines jokes-string)))
 
 (defn- joke-command []
