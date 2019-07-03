@@ -40,7 +40,7 @@ The following list describes what is required to setup ClojureScript/cljs to int
 * package.json's `main` key specifies a lib/main.js as the main entry point. In shadow-cljs.edn, we specify the `:output-to` key to be lib/main.js as the final asset built from our cljs code.
 * In shadow-cljs.edn we configure the `:exports` key to export cljs fns to the main module. For this package, we define `activate` and `deactivate` of the [available Atom functions](https://flight-manual.atom.io/hacking-atom/sections/package-word-count/#source-code).
 * Commands are configured under the `activationCommands` key in package.json. These commands are defined as a cljs map in `git-puns.commands/commands`.
-* The shadow-cljs repl reload is configured under the `:devtools` key. The functions referenced there activate/deactivate and notify the user when the package reloads.
+* The shadow-cljs repl reload is configured under the `:devtools` key. The functions referenced there activate/deactivate the package and notify the user when the package reloads.
 
 ### REPL Features
 
