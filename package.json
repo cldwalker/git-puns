@@ -19,6 +19,6 @@
   "dependencies": {},
   "devDependencies": {
     "shadow-cljs": "^2.8.37",
-    "ws": "^6.2.1"
+    "ws": "^7.4.6"
   }
 }
